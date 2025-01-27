@@ -4,6 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import postRoutes from "./routes/postRoutes.js"; // Importar las rutas correctamente
+import { getPosts } from "./controllers/postController.js";
 
 dotenv.config(); // Configurar dotenv
 
@@ -12,6 +13,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+
 
 // Conectar a MongoDB
 mongoose
@@ -22,6 +24,7 @@ mongoose
 
 // Rutas
 app.use("/api/posts", postRoutes); // Usar las rutas importadas
+
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 5000;

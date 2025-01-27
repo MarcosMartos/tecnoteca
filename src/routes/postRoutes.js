@@ -17,3 +17,4 @@ router.put("/:id", updatePost);      // Actualizar un post
 router.delete("/:id", deletePost);   // Eliminar un post
 
 export default router;
+
